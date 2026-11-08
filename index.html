@@ -652,6 +652,202 @@
       animation: deadline-glow 0.75s ease;
     }
 
+    /* ---------- Guide panel ---------- */
+    .guide-panel {
+      position: relative;
+      overflow: hidden;
+      margin-top: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.94);
+      border-radius: var(--radius);
+      background:
+        radial-gradient(circle at 100% 0%, rgba(244, 218, 255, 0.3), transparent 38%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(249, 245, 255, 0.76));
+      box-shadow: 0 16px 38px -32px rgba(75, 48, 132, 0.48), inset 0 1px 0 rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(18px) saturate(1.2);
+      -webkit-backdrop-filter: blur(18px) saturate(1.2);
+    }
+
+    .guide-panel summary {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 58px;
+      padding: 14px 16px;
+      color: #4c3d63;
+      font-size: 13px;
+      font-weight: 650;
+      line-height: 1.55;
+      letter-spacing: 0.01em;
+      list-style: none;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .guide-panel summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .guide-panel summary::marker {
+      content: "";
+    }
+
+    .guide-panel summary::after {
+      content: "+";
+      display: grid;
+      place-items: center;
+      width: 26px;
+      height: 26px;
+      flex: 0 0 26px;
+      margin-left: auto;
+      border-radius: 50%;
+      background: #f2ecff;
+      color: #7c5bd6;
+      font-family: var(--font-mono);
+      font-size: 17px;
+      font-weight: 500;
+      line-height: 1;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .guide-panel[open] summary {
+      border-bottom: 1px solid rgba(100, 78, 151, 0.11);
+      background: rgba(255, 255, 255, 0.28);
+    }
+
+    .guide-panel[open] summary::after {
+      content: "−";
+      background: #e9ddff;
+      color: #5c3eb0;
+    }
+
+    .guide-panel summary:hover {
+      background: rgba(255, 255, 255, 0.34);
+    }
+
+    .guide-content {
+      padding: 14px 16px 17px;
+      animation: guide-in 0.28s ease both;
+    }
+
+    .guide-part + .guide-part {
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px dashed rgba(100, 78, 151, 0.14);
+    }
+
+    .guide-part-title {
+      margin: 0 0 10px;
+      color: #5b3fb0;
+      font-size: 13px;
+      font-weight: 750;
+      line-height: 1.55;
+      letter-spacing: 0.01em;
+    }
+
+    .guide-part-sub {
+      display: block;
+      margin-top: 2px;
+      color: #9b8cab;
+      font-size: 10px;
+      font-weight: 600;
+      line-height: 1.5;
+      letter-spacing: 0.02em;
+    }
+
+    .guide-list {
+      display: grid;
+      gap: 9px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .guide-item {
+      padding: 12px;
+      border: 1px solid rgba(110, 86, 163, 0.11);
+      border-radius: 13px;
+      background: rgba(255, 255, 255, 0.64);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.76);
+    }
+
+    .guide-item-head {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 9px;
+    }
+
+    .guide-num {
+      display: grid;
+      place-items: center;
+      width: 22px;
+      height: 22px;
+      flex: 0 0 22px;
+      margin-top: 1px;
+      border-radius: 50%;
+      background: #f0e8ff;
+      color: #8a6cc7;
+      font-family: var(--font-mono);
+      font-size: 8px;
+      font-weight: 600;
+      line-height: 1;
+    }
+
+    .guide-item-title {
+      margin: 0;
+      color: #443555;
+      font-size: 12.5px;
+      font-weight: 700;
+      line-height: 1.55;
+    }
+
+    .guide-when {
+      padding: 8px 10px;
+      border-left: 3px solid #c3aef0;
+      border-radius: 0 9px 9px 0;
+      background: rgba(124, 91, 214, 0.075);
+      color: #6a5b80;
+      font-size: 11px;
+      line-height: 1.75;
+    }
+
+    .guide-how {
+      margin-top: 7px;
+      padding: 0 2px;
+      color: #71657f;
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    .guide-how + .guide-how {
+      margin-top: 4px;
+    }
+
+    .guide-when strong,
+    .guide-how strong,
+    .guide-tips strong {
+      color: #5c3eb0;
+      font-weight: 700;
+    }
+
+    .guide-tips {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .guide-tips li {
+      padding: 9px 11px;
+      border: 1px solid rgba(110, 86, 163, 0.11);
+      border-radius: 11px;
+      background: rgba(255, 255, 255, 0.64);
+      color: #6a5b80;
+      font-size: 11px;
+      line-height: 1.75;
+    }
+
     /* ---------- Tabs ---------- */
     .tabs-shell {
       position: sticky;
@@ -4044,6 +4240,11 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
+    @keyframes guide-in {
+      from { opacity: 0; transform: translateY(-5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     @keyframes progress-shine {
       0%, 56% { transform: translateX(-100%); }
       82%, 100% { transform: translateX(100%); }
@@ -4147,6 +4348,29 @@
         padding: 23px;
       }
 
+      .guide-panel summary {
+        padding: 15px 18px;
+        font-size: 14px;
+      }
+
+      .guide-content {
+        padding: 16px 18px 19px;
+      }
+
+      .guide-item {
+        padding: 14px;
+      }
+
+      .guide-item-title {
+        font-size: 13px;
+      }
+
+      .guide-when,
+      .guide-how,
+      .guide-tips li {
+        font-size: 11.5px;
+      }
+
       .hero {
         padding-top: 7px;
       }
@@ -4189,6 +4413,74 @@
 
       .cd-deadline-input {
         font-size: 8.5px;
+      }
+
+      .guide-panel {
+        margin-top: 14px;
+      }
+
+      .guide-panel summary {
+        min-height: 54px;
+        gap: 8px;
+        padding: 12px;
+        font-size: 12px;
+      }
+
+      .guide-panel summary::after {
+        width: 23px;
+        height: 23px;
+        flex-basis: 23px;
+        font-size: 15px;
+      }
+
+      .guide-content {
+        padding: 12px 12px 15px;
+      }
+
+      .guide-part + .guide-part {
+        margin-top: 16px;
+        padding-top: 14px;
+      }
+
+      .guide-part-title {
+        font-size: 12px;
+      }
+
+      .guide-part-sub {
+        font-size: 9.5px;
+      }
+
+      .guide-list {
+        gap: 8px;
+      }
+
+      .guide-item {
+        padding: 10px;
+      }
+
+      .guide-item-head {
+        gap: 7px;
+      }
+
+      .guide-item-title {
+        font-size: 11.5px;
+      }
+
+      .guide-num {
+        width: 20px;
+        height: 20px;
+        flex-basis: 20px;
+        font-size: 7.5px;
+      }
+
+      .guide-when {
+        padding: 7px 8px;
+        font-size: 10.5px;
+      }
+
+      .guide-how,
+      .guide-tips li {
+        font-size: 10.5px;
       }
 
       .tabs-shell {
@@ -4547,6 +4839,95 @@
         <span class="cd-status" id="cdStatus">时间还站在你这边</span>
       </div>
     </section>
+
+    <details class="guide-panel" id="guidePanel">
+      <summary>🎮 黄同学-专属通关指南（点击展开）</summary>
+      <div class="guide-content">
+        <section class="guide-part" aria-labelledby="guide-part-1">
+          <h3 class="guide-part-title" id="guide-part-1">
+            <span>🌟 第一部分：日常实用工具</span>
+            <span class="guide-part-sub">（交作业、发朋友圈必看）</span>
+          </h3>
+          <ul class="guide-list">
+            <li class="guide-item">
+              <div class="guide-item-head">
+                <span class="guide-num" aria-hidden="true">01</span>
+                <h4 class="guide-item-title">📉 图片压缩 / 格式转换</h4>
+              </div>
+              <div class="guide-when"><strong>什么时候用：</strong>交作业文件太大传不上去，或者想省流量发朋友圈时。</div>
+              <div class="guide-how"><strong>具体怎么点：</strong>点击虚线框传图。传完后，用手指按住中间那根白线左右拖动！左边是原图，右边是压缩图。拉到底部，把“压缩质量”调到 60%-80% 之间，画质肉眼看不出区别，但文件能小一半！点右下角“下载”即可。</div>
+            </li>
+            <li class="guide-item">
+              <div class="guide-item-head">
+                <span class="guide-num" aria-hidden="true">02</span>
+                <h4 class="guide-item-title">💧 图片取色器</h4>
+              </div>
+              <div class="guide-when"><strong>什么时候用：</strong>做网页、画图，或者做 VR 贴图时，找不到好看的配色。</div>
+              <div class="guide-how"><strong>具体怎么点：</strong>传图后，直接在图片上点击你想提取的颜色（比如人物的衣服、天空）。下方立刻会出现色号，点“复制”就能直接贴进 PS 或代码里。</div>
+            </li>
+            <li class="guide-item">
+              <div class="guide-item-head">
+                <span class="guide-num" aria-hidden="true">03</span>
+                <h4 class="guide-item-title">🌈 极简 CSS 渐变生成器</h4>
+              </div>
+              <div class="guide-when"><strong>什么时候用：</strong>做网页设计作业，需要好看的渐变色背景。</div>
+              <div class="guide-how"><strong>具体怎么点：</strong>点一下“起始色”和“结束色”选颜色，拖动“渐变角度”滑块。看到满意的颜色，点击右下角“复制 CSS”，直接白嫖代码。</div>
+            </li>
+          </ul>
+        </section>
+
+        <section class="guide-part" aria-labelledby="guide-part-2">
+          <h3 class="guide-part-title" id="guide-part-2">
+            <span>🧪 第二部分：数图课/PS 考前急救</span>
+            <span class="guide-part-sub">（重点！）</span>
+          </h3>
+          <ul class="guide-list">
+            <li class="guide-item">
+              <div class="guide-item-head">
+                <span class="guide-num" aria-hidden="true">04</span>
+                <h4 class="guide-item-title">🎨 图层混合实验室（对应课本项目4）</h4>
+              </div>
+              <div class="guide-when"><strong>什么时候用：</strong>老师讲“正片叠底”、“滤色”听不懂的时候。</div>
+              <div class="guide-how"><strong>具体怎么点：</strong>左边框传一张风景图（底层），右边框传一张黑白纹理图（上层）。依次点击下面的四个按钮（正片叠底/滤色/叠加/正常），直观感受“去白留黑”的魔法。</div>
+            </li>
+            <li class="guide-item">
+              <div class="guide-item-head">
+                <span class="guide-num" aria-hidden="true">05</span>
+                <h4 class="guide-item-title">📊 RGB 直方图（你的修图照妖镜）</h4>
+              </div>
+              <div class="guide-when"><strong>什么时候用：</strong>判断一张图是不是曝光过度或太暗。</div>
+              <div class="guide-how"><strong>具体怎么点：</strong>只要你在“图片压缩”里传了图，下面就会自动生成。横轴是亮度 0-255。波浪全挤在左边说明太暗，挤在右边说明太亮，均匀分布才是好图。</div>
+            </li>
+            <li class="guide-item">
+              <div class="guide-item-head">
+                <span class="guide-num" aria-hidden="true">06</span>
+                <h4 class="guide-item-title">🔪 容差抠图模拟器（对应课本项目2的魔棒工具）</h4>
+              </div>
+              <div class="guide-when"><strong>什么时候用：</strong>想把人像或物品从背景里抠出来。</div>
+              <div class="guide-how"><strong>具体怎么点：</strong>传图后，点击你想去掉的背景颜色（比如纯色背景）。然后拖动下方的“容差度”滑块。容差往右拉，相近的颜色就会变成透明（露出灰白格子）。一般拉到 20-30 最好用。</div>
+            </li>
+            <li class="guide-item">
+              <div class="guide-item-head">
+                <span class="guide-num" aria-hidden="true">07</span>
+                <h4 class="guide-item-title">🛠️ 高级色彩调校 &amp; 图像空域滤波（对应项目5和项目6）</h4>
+              </div>
+              <div class="guide-when"><strong>什么时候用：</strong>修图调色，或者做 VR 贴图去噪。</div>
+              <div class="guide-how"><strong>色彩调校怎么点：</strong>直接拖动 R(红) G(绿) B(蓝) 三个滑块，画面颜色会实时跟着变。</div>
+              <div class="guide-how"><strong>空域滤波怎么点：</strong>传一张人脸图。点【均值滤波】，图变模糊了（去噪）；点【拉普拉斯锐化】，五官边缘瞬间变清晰。这就是课本里说的“卷积核”。</div>
+            </li>
+          </ul>
+        </section>
+
+        <section class="guide-part" aria-labelledby="guide-part-3">
+          <h3 class="guide-part-title" id="guide-part-3">📱 第三部分：隐藏黑科技</h3>
+          <ul class="guide-tips">
+            <li><strong>倒计时：</strong>点击日历图标可选择交作业时间，进行倒计时</li>
+            <li><strong>变身独立 App：</strong>用手机浏览器打开本网页，点击浏览器菜单里的 “添加到主屏幕”。桌面就会出现一个专属图标，点开全屏无边框，甚至没网也能用！</li>
+            <li><strong>超级彩蛋：</strong>连续点击网页顶部那个 “下午好，黄同学” 的标签 5 次，会有惊喜掉落。</li>
+          </ul>
+        </section>
+      </div>
+    </details>
 
     <div class="tabs-shell" id="tabsShell">
       <div class="tabs" role="tablist" aria-label="秘籍分类">

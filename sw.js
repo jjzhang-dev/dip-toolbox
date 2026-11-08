@@ -2,7 +2,7 @@
  * 策略：Cache First（缓存优先）
  * 升级页面后请把 CACHE_NAME 的版本号 +1，避免继续命中旧缓存。
  */
-const CACHE_NAME = "huang-shutu-pwa-v1";
+const CACHE_NAME = "huang-shutu-pwa-v2";
 const CACHE_PREFIX = "huang-shutu-pwa-";
 
 const PRECACHE_URLS = [
